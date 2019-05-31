@@ -1,0 +1,221 @@
+/*======================================
+//--//-->   NAVBAR
+======================================*/
+
+.navbar-b {
+  transition: all .5s ease-in-out;
+  background-color: transparent;
+  padding-top: 1.563rem;
+  padding-bottom: 1.563rem;
+}
+
+
+/** borda inferior quando o menu está abaixo do topo **/
+.navbar-b.navbar-reduce {
+  box-shadow: 0px 6px 9px 0px rgb(94, 10, 10);
+}
+
+.navbar-b.navbar-trans .nav-item,
+.navbar-b.navbar-reduce .nav-item {
+  position: relative;
+  padding-right: 10px;
+  padding-left: 0;
+}
+
+/* cor do link q nao esta ativado quando estiver no top*/
+.navbar-b.navbar-trans .nav-link,
+.navbar-b.navbar-reduce .nav-link { 
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+ 
+/** barra que avisa qual links está ativado **/
+.navbar-b.navbar-trans .nav-link:before,
+.navbar-b.navbar-reduce .nav-link:before {
+  content: '';
+  position: absolute;
+  margin-left: 0px;
+  width: 0%;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  transition: all 500ms ease;
+}
+  /**
+.navbar-b.navbar-trans .nav-link:hover,
+.navbar-b.navbar-reduce .nav-link:hover {
+  color: #1B1B1B;
+}
+*/
+
+/* tamanho da barra de aviso dos links */
+.navbar-b.navbar-trans .nav-link:hover:before,
+.navbar-b.navbar-reduce .nav-link:hover:before {
+  width: 35px;
+}
+  
+.navbar-b.navbar-trans .show > .nav-link:before,
+.navbar-b.navbar-trans .active > .nav-link:before,
+.navbar-b.navbar-trans .nav-link.show:before,
+.navbar-b.navbar-trans .nav-link.active:before,
+.navbar-b.navbar-reduce .show > .nav-link:before,
+.navbar-b.navbar-reduce .active > .nav-link:before,
+.navbar-b.navbar-reduce .nav-link.show:before,
+.navbar-b.navbar-reduce .nav-link.active:before {
+  width: 35px;
+}
+
+/* cor da barrinha abaixo do link qiuando esta no top*/
+.navbar-b.navbar-trans .nav-link:before { 
+  background-color: #fff;
+}
+
+/* cor de quando passa o mouse por cima do link */
+.navbar-b.navbar-trans .nav-link:hover { 
+  color: #fff;
+}
+
+/* cor do link ativado quando esta no topo */
+.navbar-b.navbar-trans .show > .nav-link,
+.navbar-b.navbar-trans .active > .nav-link,
+.navbar-b.navbar-trans .nav-link.show,
+.navbar-b.navbar-trans .nav-link.active {
+  color: #fff; 
+}
+
+ /* cor da navba quando esta em dropdown e  ou descendo a pagina */
+.navbar-b.navbar-reduce {
+  transition: all .5s ease-in-out;
+  background-color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/* cor dos links quando abaixa ou esta em dropdown */
+.navbar-b.navbar-reduce .nav-link {
+  color: black;
+}
+
+/* cor da barrinha de aviso do link baixo quando esta em dropdown */
+.navbar-b.navbar-reduce .nav-link:before { 
+  background-color: black;
+}
+
+/* cordo link quando passa o mouse por cima quando esta abaixo no top ou em dropdown */
+.navbar-b.navbar-reduce .nav-link:hover { 
+  color: blue;
+}
+
+/* mostra a cor do link ativado em dropdown ou abaixo do top */
+.navbar-b.navbar-reduce .show > .nav-link,
+.navbar-b.navbar-reduce .active > .nav-link,
+.navbar-b.navbar-reduce .nav-link.show,
+.navbar-b.navbar-reduce .nav-link.active { 
+  color: #0078ff;
+}
+
+/* cor do link da direita quando desce a pagina */
+.navbar-b.navbar-reduce .navbar-brand { 
+  color: black;
+}
+
+/* cor da barra de dropdwon em cell  */
+.navbar-b.navbar-reduce .navbar-toggler span {
+  background-color: #1B1B1B; 
+}
+
+/* cor do link da esqueda quando esta no topo */
+.navbar-b .navbar-brand {
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+
+.navbar-b .navbar-nav .dropdown-item.show .dropdown-menu,
+.navbar-b .dropdown.show .dropdown-menu,
+.navbar-b .dropdown-btn.show .dropdown-menu {
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  transform: translate3d(0px, 0px, 0px);
+  visibility: visible !important;
+}
+ 
+.navbar-b .dropdown-menu {
+  margin: 1.12rem 0 0;
+  border-radius: 0;
+}
+
+.navbar-b .dropdown-menu .dropdown-item {
+  padding: .7rem 1.7rem;
+  transition: all 500ms ease;
+}
+
+.navbar-b .dropdown-menu .dropdown-item:hover {
+  background-color: #0078ff;
+  color: #fff;
+  transition: all 500ms ease;
+}
+
+.navbar-b .dropdown-menu .dropdown-item.active {
+  background-color: #0078ff;
+}
+
+/*--/ Hamburger Navbar /--*/
+
+.navbar-toggler {
+  position: relative;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  outline: 0;
+}
+
+/* botao do dropdwn em cell */
+.navbar-toggler span { 
+  display: block;
+  background-color: #fff;
+  height: 3px;
+  width: 25px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  left: 0;
+  opacity: 1;
+}
+
+.navbar-toggler span:nth-child(1),
+.navbar-toggler span:nth-child(3) {
+  transition: -webkit-transform .35s ease-in-out;
+  transition: transform .35s ease-in-out;
+  transition: transform .35s ease-in-out, -webkit-transform .35s ease-in-out;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(1) {
+  position: absolute;
+  left: 12px;
+  top: 10px;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  opacity: 0.9;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(2) {
+  height: 12px;
+  visibility: hidden;
+  background-color: transparent;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(3) {
+  position: absolute;
+  left: 12px;
+  top: 10px;
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+  opacity: 0.9;
+}
+/*======================================
+//--//-->   END NAVBAR
+======================================*/
